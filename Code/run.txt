@@ -1,0 +1,154 @@
+Using device: cuda
+Vocab size: 88584
+Train: 25000, Test: 25000
+Decoding all texts (this may take 2-3 minutes)...
+Train decode: 100%|██████████| 25000/25000 [00:02<00:00, 12387.17it/s]
+Test decode: 100%|██████████| 25000/25000 [00:01<00:00, 12860.09it/s]
+Decoded 25000 train, 25000 test
+
+============================================================
+Method 1: One‑Hot Bag‑of‑Words (unigram) + MLP
+============================================================
+One‑hot BOW shape: train (25000, 20000), test (25000, 20000)
+Vocabulary size: 20000
+
+Method1 total params: 21,141,250
+Method1 Epoch 1: 100%|██████████| 196/196 [00:06<00:00, 31.52it/s]
+Epoch 1: train_acc=0.8362, test_acc=0.8505
+Method1 Epoch 2: 100%|██████████| 196/196 [00:05<00:00, 33.57it/s]
+Epoch 2: train_acc=0.9573, test_acc=0.8352
+Method1 Epoch 3: 100%|██████████| 196/196 [00:05<00:00, 34.45it/s]
+Epoch 3: train_acc=0.9844, test_acc=0.8300
+Method1 Epoch 4: 100%|██████████| 196/196 [00:05<00:00, 34.31it/s]
+Epoch 4: train_acc=0.9875, test_acc=0.8299
+Early stopping triggered after epoch 4 (no improvement for 3 epochs).
+Method1 Best Test Acc: 85.05%
+
+============================================================
+Method 2: Word2Vec (300d, full data) + BiGRU
+============================================================
+Training Word2Vec on all training texts...
+Word2Vec training: epoch 1/15 completed
+Word2Vec training: epoch 2/15 completed
+Word2Vec training: epoch 3/15 completed
+Word2Vec training: epoch 4/15 completed
+Word2Vec training: epoch 5/15 completed
+Word2Vec training: epoch 6/15 completed
+Word2Vec training: epoch 7/15 completed
+Word2Vec training: epoch 8/15 completed
+Word2Vec training: epoch 9/15 completed
+Word2Vec training: epoch 10/15 completed
+Word2Vec training: epoch 11/15 completed
+Word2Vec training: epoch 12/15 completed
+Word2Vec training: epoch 13/15 completed
+Word2Vec training: epoch 14/15 completed
+Word2Vec training: epoch 15/15 completed
+Word2Vec vocab size: 51955
+Train to ids: 100%|██████████| 25000/25000 [00:01<00:00, 14093.89it/s]
+Test to ids: 100%|██████████| 25000/25000 [00:01<00:00, 14735.45it/s]
+Method2 params: 17,628,234
+Method2 Epoch 1: 100%|██████████| 782/782 [01:23<00:00,  9.40it/s]
+Epoch 1: train_acc=0.5501, test_acc=0.8114
+Method2 Epoch 2: 100%|██████████| 782/782 [01:23<00:00,  9.38it/s]
+Epoch 2: train_acc=0.8678, test_acc=0.9031
+Method2 Epoch 3: 100%|██████████| 782/782 [01:23<00:00,  9.38it/s]
+Epoch 3: train_acc=0.9120, test_acc=0.9085
+Method2 Epoch 4: 100%|██████████| 782/782 [01:23<00:00,  9.38it/s]
+Epoch 4: train_acc=0.9344, test_acc=0.9066
+Method2 Epoch 5: 100%|██████████| 782/782 [01:23<00:00,  9.40it/s]
+Epoch 5: train_acc=0.9554, test_acc=0.9078
+Method2 Epoch 6: 100%|██████████| 782/782 [01:23<00:00,  9.38it/s]
+Epoch 6: train_acc=0.9720, test_acc=0.9044
+Early stopping triggered after epoch 6 (no improvement for 3 epochs).
+Method2 Best Test Acc: 90.85%
+
+============================================================
+Method 3: Frozen DistilBERT + Logistic Regression (full data)
+============================================================
+Some weights of the model checkpoint at /mnt/Data/distilbert-base-uncased were not used when initializing DistilBertModel: ['vocab_layer_norm.bias', 'vocab_layer_norm.weight', 'vocab_transform.bias', 'vocab_transform.weight', 'vocab_projector.weight', 'vocab_projector.bias']
+- This IS expected if you are initializing DistilBertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing DistilBertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Extracting training embeddings...
+Extracting: 100%|██████████| 391/391 [02:42<00:00,  2.41it/s]
+Extracting test embeddings...
+Extracting: 100%|██████████| 391/391 [02:41<00:00,  2.42it/s]
+Train embeddings shape: (25000, 768), Test: (25000, 768)
+Method3 params: 1,538
+Method3 Epoch 1: 100%|██████████| 49/49 [00:01<00:00, 29.77it/s]
+Epoch 1: train_acc=0.7321, test_acc=0.7892
+Method3 Epoch 2: 100%|██████████| 49/49 [00:01<00:00, 31.44it/s]
+Epoch 2: train_acc=0.8065, test_acc=0.8122
+Method3 Epoch 3: 100%|██████████| 49/49 [00:01<00:00, 32.27it/s]
+Epoch 3: train_acc=0.8206, test_acc=0.8117
+Method3 Epoch 4: 100%|██████████| 49/49 [00:01<00:00, 29.97it/s]
+Epoch 4: train_acc=0.8246, test_acc=0.8224
+Method3 Epoch 5: 100%|██████████| 49/49 [00:01<00:00, 32.92it/s]
+Epoch 5: train_acc=0.8292, test_acc=0.8241
+Method3 Epoch 6: 100%|██████████| 49/49 [00:01<00:00, 35.13it/s]
+Epoch 6: train_acc=0.8338, test_acc=0.8282
+Method3 Epoch 7: 100%|██████████| 49/49 [00:01<00:00, 35.34it/s]
+Epoch 7: train_acc=0.8361, test_acc=0.8298
+Method3 Epoch 8: 100%|██████████| 49/49 [00:01<00:00, 33.33it/s]
+Epoch 8: train_acc=0.8374, test_acc=0.8320
+Method3 Epoch 9: 100%|██████████| 49/49 [00:01<00:00, 33.74it/s]
+Epoch 9: train_acc=0.8388, test_acc=0.8336
+Method3 Epoch 10: 100%|██████████| 49/49 [00:01<00:00, 30.98it/s]
+Epoch 10: train_acc=0.8391, test_acc=0.8350
+Method3 Epoch 11: 100%|██████████| 49/49 [00:01<00:00, 32.49it/s]
+Epoch 11: train_acc=0.8416, test_acc=0.8365
+Method3 Epoch 12: 100%|██████████| 49/49 [00:01<00:00, 32.49it/s]
+Epoch 12: train_acc=0.8432, test_acc=0.8378
+Method3 Epoch 13: 100%|██████████| 49/49 [00:01<00:00, 28.84it/s]
+Epoch 13: train_acc=0.8440, test_acc=0.8379
+Method3 Epoch 14: 100%|██████████| 49/49 [00:01<00:00, 32.83it/s]
+Epoch 14: train_acc=0.8450, test_acc=0.8367
+Method3 Epoch 15: 100%|██████████| 49/49 [00:01<00:00, 34.23it/s]
+Epoch 15: train_acc=0.8453, test_acc=0.8404
+Method3 Epoch 16: 100%|██████████| 49/49 [00:01<00:00, 35.92it/s]
+Epoch 16: train_acc=0.8462, test_acc=0.8416
+Method3 Epoch 17: 100%|██████████| 49/49 [00:01<00:00, 34.81it/s]
+Epoch 17: train_acc=0.8455, test_acc=0.8421
+Method3 Epoch 18: 100%|██████████| 49/49 [00:01<00:00, 37.59it/s]
+Epoch 18: train_acc=0.8464, test_acc=0.8428
+Method3 Epoch 19: 100%|██████████| 49/49 [00:01<00:00, 32.17it/s]
+Epoch 19: train_acc=0.8478, test_acc=0.8413
+Method3 Epoch 20: 100%|██████████| 49/49 [00:01<00:00, 35.90it/s]
+Epoch 20: train_acc=0.8479, test_acc=0.8428
+Method3 Best Test Acc: 84.28%
+Some weights of the model checkpoint at /mnt/Data/distilbert-base-uncased were not used when initializing DistilBertModel: ['vocab_layer_norm.bias', 'vocab_layer_norm.weight', 'vocab_transform.bias', 'vocab_transform.weight', 'vocab_projector.weight', 'vocab_projector.bias']
+- This IS expected if you are initializing DistilBertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing DistilBertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+============================================================
+Method 4: Few-shot (20-shot, 10 trials)
+============================================================
+Some weights of the model checkpoint at /mnt/Data/distilbert-base-uncased were not used when initializing DistilBertModel: ['vocab_layer_norm.bias', 'vocab_layer_norm.weight', 'vocab_transform.bias', 'vocab_transform.weight', 'vocab_projector.weight', 'vocab_projector.bias']
+- This IS expected if you are initializing DistilBertModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing DistilBertModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Trial 1: acc=69.85%
+Trial 2: acc=67.65%
+Trial 3: acc=67.25%
+Trial 4: acc=72.95%
+Trial 5: acc=68.20%
+Trial 6: acc=71.45%
+Trial 7: acc=63.15%
+Trial 8: acc=62.85%
+Trial 9: acc=62.65%
+Trial 10: acc=59.65%
+Few-shot (20-shot, 10 trials) Test Acc: 66.57% ± 4.10%
+
+========================================
+FINAL OPTIMIZED RESULTS (DistilBERT only)
+========================================
+Method 1 (TF-IDF + Deep MLP)               : 85.05%
+Method 2 (Word2Vec + BiGRU)                : 90.85%
+Method 3 (Frozen DistilBERT + LogReg)      : 84.28%
+Method 4 (Few-shot, 20-shot, 10 trials)    : 66.57% (±4.10%)
+
+Observations:
+- One‑hot + MLP performs reasonably but suffers from high dimensionality and lack of semantic information.
+- Word2Vec + BiGRU captures word order and semantics, achieving similar accuracy with far fewer parameters.
+- Frozen DistilBERT with strong regularization gives the best accuracy due to rich contextual embeddings.
+- Few‑shot works without training but is less stable and requires a good support set.
+
+All results saved to Output/ and models to Saving/

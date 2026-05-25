@@ -1,0 +1,102 @@
+{
+  "sample_texts": [
+    "i went <UNK> saw this movie last night after being coaxed to by a few friends of mine i'll admit that i was reluctant to see it because from what i knew of ashton kutcher he was only able to do comedy i was wrong kutcher played character of jake fischer very well <UNK> kevin costner played ben randall with such professionalism sign of a good movie is that it can toy with our emotions this one did exactly that entire theater which was sold out was overcome by laughter during first half of movie <UNK> were moved to tears during second half while exiting theater i not only saw many women in tears but many full grown men as well trying desperately not to let anyone see them crying this movie was great <UNK> i suggest that you go see it before you judge",
+    "actor turned director bill paxton follows up his promising debut gothic horror frailty with this family friendly sports drama about 1913 u s open where a young american caddy rises from his humble background to play against his idol in what was dubbed as greatest game ever played i'm no fan of golf <UNK> these scrappy underdog sports flicks are a dime a dozen most recently done to grand effect with miracle <UNK> cinderella man but some how this film was enthralling all same br br film starts with some creative opening credits imagine a disneyfied version of animated opening credits of hbo's carnivale <UNK> rome but lumbers along slowly for its first by numbers hour once action moves to u s open things pick up very well paxton does a nice job <UNK> shows a knack for effective directorial flourishes i loved rain soaked montage of action on day two of open that propel plot further or add some unexpected psychological depth to proceedings there's some compelling character development when british harry is haunted by images of aristocrats in black suits <UNK> top hats who destroyed his family cottage as a child to make way for a golf course he also does a good job of visually depicting what goes on in players' heads under pressure golf a painfully boring sport is brought vividly alive here credit should also be given set designers <UNK> costume department for creating an engaging period piece atmosphere of london <UNK> boston at beginning of twentieth century br br you know how this is going to end not only because it's based on a true story but also because films in this genre follow same template over <UNK> over but paxton puts on a better than average show <UNK> perhaps indicates more talent behind camera than he ever had in front of it despite formulaic nature this is a nice <UNK> easy film to root for that deserves to find an audience",
+    "as a recreational golfer with some knowledge of sport's history i was pleased with disney's sensitivity to issues of class in golf in early twentieth century movie depicted well psychological battles that harry fought within himself from his childhood trauma of being evicted to his own inability to break that glass ceiling that prevents him from being accepted as an equal in english golf society likewise young goes through his own class struggles being a mere caddie in eyes of upper crust americans who scoff at his attempts to rise above his standing br br what i loved best however is how this theme of class is manifested in characters of parents his father is a working class drone who sees value of hard work but is intimidated by upper class his mother however recognizes her son's talent <UNK> desire <UNK> encourages him to pursue his dream of competing against those who think he is inferior br br finally golf scenes are well photographed although course used in movie was not actual site of historical tournament little liberties taken by disney do not detract from beauty of film there's one little disney moment at pool table otherwise viewer does not really think disney ending as in miracle is not some disney creation but one that only human history could have written"
+  ],
+  "sample_true_labels": [
+    1,
+    1,
+    1
+  ],
+  "method1_tfidf": {
+    "predictions": [
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.032795365899801254,
+        0.9672045707702637
+      ],
+      [
+        0.0014964680885896087,
+        0.998503565788269
+      ],
+      [
+        0.31162169575691223,
+        0.6883782744407654
+      ]
+    ]
+  },
+  "method2_w2v_gru": {
+    "predictions": [
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.09272050112485886,
+        0.9072794914245605
+      ],
+      [
+        0.010772328823804855,
+        0.9892276525497437
+      ],
+      [
+        0.025378303602337837,
+        0.9746217131614685
+      ]
+    ]
+  },
+  "method3_distilbert_lr": {
+    "predictions": [
+      1,
+      1,
+      1
+    ],
+    "probabilities": [
+      [
+        0.33847978711128235,
+        0.6615201830863953
+      ],
+      [
+        0.04797300696372986,
+        0.9520270228385925
+      ],
+      [
+        0.07800466567277908,
+        0.9219953417778015
+      ]
+    ]
+  },
+  "method4_fewshot": {
+    "predictions": [
+      0,
+      1,
+      0
+    ],
+    "probabilities": [
+      [
+        0.5007561379992961,
+        0.4992438620007039
+      ],
+      [
+        0.49561704497920744,
+        0.5043829550207926
+      ],
+      [
+        0.5019526310750168,
+        0.49804736892498325
+      ]
+    ]
+  },
+  "test_accuracies": {
+    "method1": 0.88404,
+    "method2": 0.90852,
+    "method3": 0.8428,
+    "method4": 0.6656500000000001
+  }
+}

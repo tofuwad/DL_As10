@@ -1,0 +1,14 @@
+
+========================================
+FINAL OPTIMIZED RESULTS (DistilBERT only)
+========================================
+Method 1 (TF-IDF + Deep MLP)               : 88.40%
+Method 2 (Word2Vec + BiGRU)                : 90.85%
+Method 3 (Frozen DistilBERT + LogReg)      : 84.28%
+Method 4 (Few-shot, 20-shot, 10 trials)    : 66.57% (±4.10%)
+
+Observations:
+- TF-IDF + deep MLP achieves strong performance (~88.4%) with low computational cost.
+- Word2Vec + BiGRU is slightly lower but captures word order.
+- Frozen DistilBERT with strong regularization (weight decay=0.1) gives ~84.3%, avoiding overfitting.
+- Few-shot provides reasonable accuracy without training, but varies with support set.
