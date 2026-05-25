@@ -140,7 +140,7 @@ Few-shot (20-shot, 10 trials) Test Acc: 66.57% ± 4.10%
 ========================================
 FINAL OPTIMIZED RESULTS (DistilBERT only)
 ========================================
-Method 1 (TF-IDF + Deep MLP)               : 85.05%
+Method 1 (One‑Hot Bag‑of‑Words + MLP)       : 85.05%
 Method 2 (Word2Vec + BiGRU)                : 90.85%
 Method 3 (Frozen DistilBERT + LogReg)      : 84.28%
 Method 4 (Few-shot, 20-shot, 10 trials)    : 66.57% (±4.10%)
